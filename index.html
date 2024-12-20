@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal Portfolio of Jon Cedric Lacharon, a passionate developer and designer.">
+  <meta name="keywords" content="developer, designer, portfolio, projects, contact">
+  <title>Aminah Banda</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+ /* Global Styles */
+* {
+  margin: 20;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #e6e6fa, #ffffff); /* Light purple to white gradient */
+  color: #4b0082; /* Indigo text color for contrast */
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #9370db; /* Medium purple */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  background: linear-gradient(135deg, #dcd8f7, #e6e6fa); /* Light purple gradient */
+  color: #4b0082; /* Indigo for text */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+header:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5); /* Enhanced shadow for hover effect */
+}
+
+.logo {
+  text-align: center; /* Center the logo */
+  padding: 20px 0; /* Add padding for spacing */
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 36px;
+  color: #9370db; /* Medium purple */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.logo a span {
+  position: relative;
+  display: inline-block;
+}
+
+.logo a:hover {
+  color: #8a2be2; /* Bright purple */
+}
+
+.logo a span::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #d1a7f2; /* Light purple underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover span::before {
+  transform: scaleX(1); /* Show underline on hover */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: #4b0082; /* Indigo */
+  letter-spacing: 1px;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #8a2be2; /* Purple underline */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #9370db; /* Medium purple */
+  transform: translateY(-3px); /* Subtle lift effect */
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1); /* Underline effect on hover */
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 40px;
+  padding: 5px;
+  cursor: pointer;
+  color: #8a2be2; /* Purple color for the menu icon */
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg); /* Rotation effect */
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: white;
+    position: absolute;
+    top: 65px;
+    right: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for mobile menu */
+    width: 140px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  /* Mobile menu links */
+  nav ul li a {
+    font-size: 1rem;
+    padding: 10px 10px;
+    text-align: center; /* Center the text for mobile */
+    width: 50%; /* Full-width links for mobile */
+  }
+}
+
+/* Landing Page */
+.landingpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 100px;
+  background: url('bg.jpg'); /* Replace with your .jpg image path */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: #4b0082; /* Indigo text */
+  text-align: left;
+  animation: fadeIn 1.5s ease-in-out; /* Background fade-in */
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-left {
+  max-width: 50%;
+  opacity: 0;
+  transform: translateX(-50px); /* Start off-screen to the left */
+  animation: slideInLeft 1.5s ease-in-out 0.5s forwards; /* Slide-in with delay */
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End in place */
+  }
+}
+
+.content-left h1 {
+  color: #9370db; /* Medium purple */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem; /* Larger font size for impact */
+  font-weight: 800;
+  margin-bottom: 0px; /* Increased spacing below the heading */
+  letter-spacing: 0px; /* Tighter letter-spacing for better visual appeal */
+  text-transform: uppercase;
+}
+
+.content-left p {
+  color: #4b0082; /* Indigo */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem; /* Slightly larger font for readability */
+  font-weight: 300;
+  margin-bottom: 30px; /* More space between text and button */
+  opacity: 0.9;
+}
+
+.content-left .btn {
+  background: linear-gradient(135deg, #ff00aa, #9370db); /* Light to medium purple gradient */
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out 0.5s forwards; /* Button fade-in with delay */
+}
+
+.content-left .btn:hover {
+  background: linear-gradient(135deg, #ffffff, #dcd8f7); /* Reversed gradient */
+  color: #4b0082; /* Indigo */
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
+}
+
+.content-right {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 70%;
+  opacity: 0;
+  transform: translateX(100vw); /* Start off-screen to the right */
+  animation: slideInRight 1.5s ease-in-out 0.5s forwards; /* Slide-in with delay */
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* End in place */
+  }
+}
+
+.content-right img {
+  max-width: 70%; /* Slightly larger image */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Soft shadow around the image */
+}
+
+/* Hover Effects (example) */
+.content-left:hover,
+.content-right:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .landingpage {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px; /* Reduced padding for smaller screens */
+    height: auto; /* Ensure proper height on small screens */
+  }
+
+  .content-left, .content-right {
+    max-width: 100%;
+    margin-bottom: 30px; /* More space between sections */
+  }
+
+  .content-left h1 {
+    font-size: 2.5rem; /* Smaller font size on mobile */
+    margin-bottom: 20px; /* Adjust margin for better spacing */
+  }
+
+  .content-left p {
+    font-size: 1.1rem; /* Adjusted font size on mobile */
+    margin-bottom: 20px; /* Less space below paragraph */
+  }
+
+  .content-left .btn {
+    padding: 12px 30px; /* Smaller button size for mobile */
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  .content-right img {
+    max-width: 100%; /* Ensure the image fits the screen width */
+    margin-left: 0; /* Remove left margin on mobile */
+  }
+}
+/* Wrapper Section for the Large Box */
+#about-wrapper {
+  position: relative; /* Ensures stacking for background */
+  width: 100%; /* Full width */
+  padding: 3rem 0; /* Space above and below the content */
+  background: linear-gradient(180deg, #e6e6fa, #ffffff); /* Light purple to white */
+  box-sizing: border-box;
+}
+
+/* About Section */
+#about-me {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #dcd8f7);
+  color: #4b0082;
+  padding: 8vw;
+  text-align: center;
+  border-radius: 12px;
+  border: 3px solid #9370db; /* Purple border to make the box stand out */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 2rem auto;
+  width: 90%; /* Default width */
+  max-width: 2500px;
+  box-sizing: border-box;
+  transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+/* Ensure it stretches out on large screens */
+@media (min-width: 1200px) {
+  #about-me {
+    width: 100%; /* Full width on large screens */
+    margin: 0; /* Remove the margin to make it stretch to the sides */
+    padding: 5vw; /* Adjust padding for larger screens */
+  }
+}
+
+/* Hover effect */
+#about-me:hover {
+  transform: translateY(-5px);
+  background-color: #e6f0ff; /* Light blue on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Section Header */
+#about-me h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  color: #9370db;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.4s, transform 0.4s;
+}
+
+#about-me h2:hover {
+  color: #004085;
+  transform: scale(1.05);
+}
+
+/* Paragraph Styling */
+#about-me p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #4b0082;
+  line-height: 1.8;
+  margin: 1.5rem auto;
+  max-width: 75%;
+  letter-spacing: 0.6px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+#about-me p:hover {
+  color: #333;
+  transform: translateY(-2px);
+}
+
+/* Highlighted Text */
+#about-me p span {
+  color: #9b4f96;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+}
+
+#about-me p span:hover {
+  color: #e74c3c;
+  transform: scale(1.08);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+#about-me .btn {
+  background-color: #9370db; /* Matches the purple theme */
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.4s, transform 0.4s, box-shadow 0.4s;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#about-me .btn:hover {
+  background-color: #6c49b8; /* Darker purple on hover */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#about-me .btn:focus {
+  outline: none;
+  transform: scale(0.98);
+  box-shadow: 0 0 15px rgba(147, 112, 219, 0.5); /* Purple glow */
+}
+
+#about-me .btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  background-color: #4b0082; /* Indigo for active state */
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(180deg, #ffffff, #f5f3ff); /* White to very light lavender */
+  color: #6a51d1; /* Soft indigo text */
+  padding: 30px 20px; /* Padding for larger screens */
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 0; /* Remove margins for full-width */
+  width: 90%; /* Full width of the screen */
+  max-width: 2500px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 10px; /* Rounded corners for the contact section */
+}
+
+#contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section Heading */
+#contact h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #a085e7; /* Light purple heading */
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#contact h2:hover {
+  transform: scale(1.05);
+  color: #7b5fc9; /* Slightly darker purple on hover */
+}
+
+/* Socials Section */
+#socials {
+  width: 100%; /* Full width on desktop */
+  padding: 0 20px; /* Padding for the sides */
+  background: linear-gradient(180deg, #ffffff, #f5f3ff); /* Light background */
+  display: flex; /* Use flexbox to center the content */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+#socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns for desktop */
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+}
+
+#socials li {
+  background: linear-gradient(0deg, #f8f5ff, #d8c9f5); /* Very light lavender to soft lilac */
+  border-radius: 15px;
+  border: 2px solid #ffffff;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+#socials li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Item Styling */
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.social-item i {
+  font-size: 28px;
+  color: #9370db; /* Soft purple icon color */
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.social-item i:hover {
+  color: #a085e7; /* Lighter purple on hover */
+  transform: scale(1.2);
+}
+
+.social-item span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555; /* Softer dark text */
+}
+
+/* Links */
+#socials a {
+  color: #7b5fc9; /* Light indigo link color */
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#socials a:hover {
+  color: #5a3ea6; /* Slightly darker indigo on hover */
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+/* Desktop (default view) */
+@media (min-width: 1025px) {
+  #contact-wrapper {
+    padding: 40px 30px;
+    max-width: 100%; /* Full-width container */
+  }
+  #contact {
+    padding: 30px 25px; /* Adequate padding for larger screens */
+    width: 100%; /* Full-width */
+  }
+  #socials {
+    width: 100%; /* Full width on desktop */
+    padding: 20px 0; /* Padding for the sides */
+  }
+  #socials ul {
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for desktop */
+    gap: 20px;
+  }
+}
+
+/* Tablets and Small Screens */
+@media (max-width: 1024px) {
+  #contact-wrapper {
+    padding: 30px 20px;
+    width: 100%; /* Full width on tablet */
+  }
+  #contact {
+    padding: 25px 20px;
+    width: 100%; /* Full width */
+  }
+  #socials ul {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    gap: 15px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  #contact-wrapper {
+    padding: 25px 15px;
+    width: 100%; /* Full width on mobile */
+  }
+  #contact {
+    padding: 20px 15px;
+    width: 100%; /* Full width */
+  }
+  #socials ul {
+    grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+    gap: 15px;
+  }
+}
+
+/* Extra Small Devices (Phones in Portrait Mode) */
+@media (max-width: 480px) {
+  #contact-wrapper {
+    padding: 20px 10px;
+    width: 100%; /* Full width on extra small devices */
+  }
+  #contact {
+    padding: 15px 10px;
+    width: 100%; /* Full width */
+  }
+  #socials ul {
+    grid-template-columns: 1fr; /* One column for mobile */
+    gap: 10px;
+  }
+  .social-item i {
+    font-size: 24px; /* Adjust icon size for small screens */
+  }
+  .social-item span {
+    font-size: 14px; /* Adjust text size for small screens */
+  }
+  #socials a {
+    font-size: 14px; /* Adjust link size for small screens */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #6a51d1; /* Theme-aligned soft purple */
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-top: 3px solid #f8f5ff; /* Soft lavender border */
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+footer:hover {
+  background-color: #7b5fc9; /* Slightly lighter purple on hover */
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Links */
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  color: #f8f5ff; /* Soft lavender for links */
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: #d8c9f5; /* Lighter purple on hover */
+  transform: scale(1.2);
+}
+
+/* Footer Text */
+footer p {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+footer p:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px 8px;
+  }
+
+  footer .social-links {
+    gap: 10px;
+  }
+
+  footer .social-links a {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 10px 5px;
+  }
+
+  footer .social-links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer .social-links a {
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="#" id="scrollToTop">
+        <span>AMINAH</span>
+      </a>
+    </div>        
+    
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-wrapper">About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="landingpage" id="home">
+    <div class="content-left">
+      <h1>Aminah Banda</h1>
+      <p>Passionate Dancer & Creative Performer, Expressing Stories Through Movement and Rhythm</p>
+      <a href="#about-wrapper" class="btn">Learn more about me</a>
+    </div>
+    <div class="content-right">
+      <img src="self.jpg" alt="Jon Cedric Lacharon">
+    </div>
+  </div>  
+
+  <div id="about-wrapper">
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>As a dancer, my passion for movement fuels everything I do. Dance is not just a form of expression, but a way of life. I am deeply connected to the rhythm and flow of each performance, constantly pushing the boundaries of my body and creativity. My journey as a dancer has allowed me to explore diverse styles and techniques, from classical forms to modern interpretations, all of which help shape my unique approach to dance.</p>
+
+<p>Every performance is an opportunity for me to connect with my audience and share a piece of my soul. I believe that dance has the power to transcend language and culture, bringing people together through the universal experience of movement. Whether it's a high-energy routine or a slow, emotive piece, I strive to bring authenticity and passion to every stage I step onto, leaving a lasting impression through every gesture.</p>
+
+<p>As I continue to evolve as a dancer, I am constantly seeking new challenges and opportunities to grow. I embrace the endless possibilities that dance offers, always striving to improve my technique, discover new styles, and push the limits of my expression. My dedication to dance is a lifelong pursuit, and I am excited to see where this art form will take me next, both on stage and in my personal growth as an artist.</p>
+
+      <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+  </div>
+  
+<div id="contact-wrapper">
+  <section id="contact">
+  <h2>Contact</h2>
+
+  <div id="socials">
+    <ul>
+      <li>
+        <div class="social-item">
+          <i class="fas fa-phone-alt"></i> <!-- Phone icon -->
+          <span>Contact Number</span>
+        </div>
+        <a href="cp:09093597365">09093597365</a> <!-- Replace with your actual number -->
+      </li>
+      <li>
+        <div class="social-item">
+          <i class="fab fa-facebook"></i>
+          <span>Athea Minah (Thea)</span>
+        </div>
+        <a href="https://www.facebook.com/Aminah2005" target="_blank">facebook.com/Aminah2005</a>
+      </li>
+      <li>
+        <div class="social-item">
+          <i class="fab fa-instagram"></i>
+          <span>Athea Minah</span>
+        </div>
+        <a href="https://www.instagram.com/_itsme_minah/" target="_blank">instagram.com/_itsme_minah//</a>
+      </li>
+      <li>
+        <div class="social-item">
+          <i class="fab fa-tiktok"></i>
+          <span>Athea Official</span>
+        </div>
+        <a href="https://www.tiktok.com/@teyang.05" target="_blank">tiktok.com/@teyang.05</a>
+      </li>
+      <li>
+        <div class="social-item">
+          <i class="fas fa-envelope"></i>
+          <span>Aminah Pantacan Banda</span>
+        </div>
+        <a href="mailto:aminahbanda65@gmail.com">aminahbanda65@gmail.com</a>
+      </li>
+      
+    </ul>
+  </section>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2024 Aminah Banda. All rights reserved.</p>
+  </footer>
+ 
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav ul');
+      nav.classList.toggle('show');
+    }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+AOS.init({
+  duration: 1000, // Animation duration in milliseconds
+  once: true, // Animation occurs only once
+});
+  </script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    window.scrollTo({
+      top: targetElement.offsetTop - 80, // Offset to account for any fixed navbar
+      behavior: "smooth",
+    });
+  });
+});
+  </script>
+  <script>
+    document.getElementById("scrollToTop").addEventListener("click", function (e) {
+  e.preventDefault(); // I-disable ang default behavior sa link
+  window.scrollTo({
+    top: 0, // Pinakataas
+    behavior: "smooth", // Smooth scroll effect
+  });
+});
+
+  </script>
+</body>
+</html>
